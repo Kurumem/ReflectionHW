@@ -77,8 +77,10 @@ public class Main {
     }
 
     public static void copy(Object source, Object dist) {
+        Object[] array = new Object[];
         Class<?> sourceClass = source.getClass();
         Class<?> distClass = dist.getClass();
+        int i = 0;
         Field[] sourceFields = sourceClass.getDeclaredFields();
         for (Field sourceField : sourceFields) {
             DoNoCopy noCopy = sourceField.getAnnotation(DoNoCopy.class);
@@ -89,6 +91,7 @@ public class Main {
                 Field distField = distClass.getDeclaredField(sourceField.getName());
                 sourceField.setAccessible(true);
                 distField.setAccessible(true);
+                array[i] = distField.set(dist, sourceField.get(source));
                 distField.set(dist, sourceField.get(source));
             } catch (Exception e) {
                 System.out.println(e);
