@@ -3,6 +3,7 @@ package Reflection;
 /* Объект с полями примитивных и ссылочных типов*/
 public class SimpleData {
     private int intData;
+    @DoNoCopy
     private byte byteData;
     //private long longData;
     private Object objectData;

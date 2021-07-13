@@ -1,0 +1,4 @@
+Имя поля:intData Тип поля: int: = 7
+Имя поля:byteData Тип поля: byte: = 7
+Имя поля:objectData Тип поля: java.lang.Object: = 123
+Имя поля:stringData Тип поля: java.lang.String: = 7
